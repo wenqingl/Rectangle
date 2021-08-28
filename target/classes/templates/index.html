@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" th:href="@{stylesheets/renctangle.css}">
+  <title>Rectangle Home</title>
+</head>
+
+<body>
+  <div class="mainContent">
+    <h1>Rectangle</h1>
+
+    <ul>
+      <li><a th:href="@{/addRectangle}">Add a New Rectangle</a></li>
+      <li><a th:href="@{/deleteRectangle}">Delete a Rectangle (need the id of rectangle)</a></li>
+    </ul>
+    <br>
+    <h2>Rectangle in Database</h2>
+
+    <table>
+      <tr>
+        <th>id</th>
+        <th>Name</th>
+        <th>Width</th>
+        <th>Height</th>
+        <th>Color</th>
+        <th>Border Width</th>
+      </tr>
+
+      <tr th:each="rectangle : ${rectangles}">
+        <td th:text="${rectangle.id}"></td>
+        <td><a th:text="${rectangle.name}" th:href="@{'/view/'+ ${rectangle.id}}"></a></td>
+        <td th:text="${rectangle.width}"></td>
+        <td th:text="${rectangle.height}"></td>
+        <td th:text="${rectangle.color}"></td>
+        <td th:text="${rectangle.borderWidth}"></td>
+      </tr>
+
+    </table>
+
+  </div>
+
+</body>
+
+</html>

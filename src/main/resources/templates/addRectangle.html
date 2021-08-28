@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{stylesheets/renctangle.css}">
+    <title>New Rectangle Form</title>
+</head>
+
+<body>
+    <div class="mainContent">
+        <h1>Enter Information</h1>
+        <form action="#" method="post" th:action="@{/addRectangle}" th:object="${rectangle}"
+            onsubmit="return addCheck()" name="addForm">
+            <table class="viewTable">
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" th:field=*{name} name="name"></td>
+                </tr>
+                <tr>
+                    <td>Width</td>
+                    <td><input type="text" th:field=*{width} name="width"></td>
+                </tr>
+                <tr>
+                    <td>Height</td>
+                    <td><input type="text" th:field=*{height} name="height"></td>
+                </tr>
+                <tr>
+                    <td>Color</td>
+                    <td><input type="text" th:field=*{color} name="color"></td>
+                </tr>
+                <tr>
+                    <td>Border Width</td>
+                    <td><input type="text" th:field=*{borderWidth} name="borderWidth"></td>
+            </table>
+            <input type="submit" value="Submit Rectangle">
+        </form>
+        <p id="showError1"></p>
+
+        <form action="#" method="POST" th:action="@{/}">
+            <input type="submit" value="Back to Homepage">
+        </form>
+    </div>
+
+    <script type="text/javascript" th:src="@{/rectangle.js}"></script>
+</body>
+
+</html>

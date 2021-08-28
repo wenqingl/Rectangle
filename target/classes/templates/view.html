@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/stylesheets/renctangle.css}">
+    <title>Read Rectangles</title>
+</head>
+
+<body>
+    <div class="mainContent">
+        <h1>Reading rectangle</h1>
+
+        <div th:style="'background-color:'+${view.color}+ ';' 
+                    +'width:'+${view.width}+'pt;'
+                    +'height:'+${view.height}+'pt;' 
+                    +'border:'+${view.borderWidth}+'pt;'
+                    +'border-style:solid;'
+                    +'font-size:medium'" th:text="${view.name}">
+        </div>
+
+        <br>
+
+        <table class="viewTable">
+            <tr>
+                <td>Name</td>
+                <td th:text="${view.name}"></td>
+            </tr>
+            <tr>
+                <td>Width</td>
+                <td th:text="${view.width}"></td>
+            </tr>
+            <tr>
+                <td>Height</td>
+                <td th:text="${view.height}"></td>
+            </tr>
+            <tr>
+                <td>Color</td>
+                <td th:text="${view.color}"></td>
+            </tr>
+            <tr>
+                <td>Border Width</td>
+                <td th:text="${view.borderWidth}"></td>
+            </tr>
+        </table>
+    </div>
+
+    <form action="#" method="POST" th:action="@{/}">
+        <input type="submit" value="Back to Homepage">
+    </form>
+    
+</body>
+
+</html>

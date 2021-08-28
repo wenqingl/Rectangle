@@ -1,0 +1,29 @@
+body{
+    background-color: #747E49; 
+    margin-top: 70px;
+}
+.mainContent{
+    width:87%;
+    border: 30px;
+    border-style: solid;
+    border-color: #d1a35f;
+    padding-left: 3%;
+    padding-bottom: 30%;
+    background-color: white;
+    margin:auto;
+    color: #3d473b;
+}
+
+
+table
+{
+    width: 70%;
+    border-collapse:collapse;
+}
+table,th,td{
+    border: 1px solid black;
+}
+
+.viewTable{
+    width:auto;
+}
